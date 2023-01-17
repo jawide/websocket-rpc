@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../js/websocket-rpc/meta_pb_browserify.js"></script>
+    <script src="../../../js/websocket-rpc/wrpc.js"></script>
+    <script src="./math_pb_browserify.js"></script>
+    <script>
+        let wrpc_client = new WebSocketRpcClient("ws://localhost:5887");
+        let math_client = wrpc_client.service("Math");
+        let sum_client = math_client.method("Sum", proto.SumArg, proto.SumResult);
+        sum_client.call({a:1, b:2}).then(res => {
+            console.log(res)
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

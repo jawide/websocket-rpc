@@ -1,0 +1,7 @@
+**/.*/
+**/test/
+**/dist/
+**/build/
+
+# python
+**/__pycache__/

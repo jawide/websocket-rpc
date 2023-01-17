@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option py_generic_services = true;
+
+message SumArg {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message SumResult {
+    int32 sum = 1;
+}
+
+service Math {
+    rpc Sum(SumArg) returns (SumResult);
+}
